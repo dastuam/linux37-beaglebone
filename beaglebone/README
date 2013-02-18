@@ -10,7 +10,7 @@ To generate a beaglebone image just run patch-beagle/patch-apply.sh script and c
 
 To generate the image just run:
 
-   $ make ARCH=arm CROSS_COMPILE=arm-angstrom-linux-gnueabi- uImage dtbs
+   $ make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- uImage dtbs
 
 
 
