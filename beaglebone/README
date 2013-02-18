@@ -1,9 +1,9 @@
 Author: David Astua M.
 Note: The patches and config file were taken from https://github.com/beagleboard/kernel/ minimal modifications done.
 
-To generate a beaglebone image just run patches/patch-apply.sh script and copy the beaglebone config to YOUR_KERNEL/.config
+To generate a beaglebone image just run patch-beagle/patch-apply.sh script and copy the beaglebone config to YOUR_KERNEL/.config
 
-   $ ./patches/patch-apply
+   $ ./patch-beagle/patch-apply
    $ cp beaglebone $MY_KERNEL_PATH/.config
 
 
