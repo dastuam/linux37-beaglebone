@@ -1,0 +1,28 @@
+Author: David Astua M.
+Note: The patches and config file were taken from https://github.com/beagleboard/kernel/ minimal modifications done.
+
+To generate a beaglebone image just run patches/patch-apply.sh script and copy the beaglebone config to YOUR_KERNEL/.config
+
+   $ ./patches/patch-apply
+   $ cp beaglebone $MY_KERNEL_PATH/.config
+
+
+
+To generate the image just run:
+
+   $ make ARCH=arm CROSS_COMPILE=arm-angstrom-linux-gnueabi- uImage dtbs
+
+
+
+After this copy the following files to /boot
+
+   arch/arm/boot/uImage
+   arch/arm/boot/am335x-bone.dtb
+
+
+uEnv.txt:
+
+   devtree=/boot/am335x-bone.dtb
+   dtboot=run mmcargs; ext2load mmc ${mmcdev}:2 ${loadaddr} ${bootfile} ; ext2load mmc ${mmcdev}:2 ${fdtaddr} ${devtree} ; bootm ${loadaddr} - ${fdtaddr}
+   uenvcmd=run dtboot
+   optargs=consoleblank=0
